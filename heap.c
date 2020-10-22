@@ -58,6 +58,19 @@ void heap_pop(Heap* pq){
     pq->heapArray[pq->size-1].priority =aux2;
     pq->heapArray[pq->size-1].data = NULL;
     pq->heapArray[pq->size-1].priority=0;
+    if (pq->heapArray[1].priority>pq->heapArray[2].priority){
+      int auxiliar= pq->heapArray[0].priority;
+      pq->heapArray[0].priority = pq->heapArray[1].priority;
+      pq->heapArray[1].priority= auxiliar;
+      
+     // cambiar pos raiz por pos 1 (izquierda de raiz)
+    }
+    else {
+      int auxiliar2= pq->heapArray[0].priority;
+      pq->heapArray[0].priority= pq->heapArray[2].priority;
+      pq->heapArray[2].priority= auxiliar2;
+      //cambiar raiz por pos 2 (der de raiz)
+    }
     pq->size--;
 }
 
