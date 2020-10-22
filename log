@@ -1,0 +1,24 @@
+Thu Oct 22 19:02:07 UTC 2020: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:4:0:
+heap.c: In function ‘createHeap’:
+heap.c:37:11: error: ‘heap’ undeclared (first use in this function); did you mean ‘heap_’?
+    return heap;
+           ^~~~
+           heap_
+heap.c:37:11: note: each undeclared identifier is reported only once for each function it appears in
+heap.c:36:10: error: unused variable ‘heap_’ [-Werror=unused-variable]
+   Heap * heap_= (Heap*) malloc(sizeof(Heap));
+          ^~~~~
+heap.c:38:1: error: control reaches end of non-void function [-Werror=return-type]
+ }
+ ^
+cc1: all warnings being treated as errors
+Compilation failed
+Thu Oct 22 19:02:19 UTC 2020: 
+ heap.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+ tests:  0|4
+total_score: 0/70
+ca2702b
