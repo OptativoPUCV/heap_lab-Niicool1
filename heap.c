@@ -44,7 +44,7 @@ void heap_push(Heap* pq, void* data, int priority){
 
 
 void heap_pop(Heap* pq){
-
+    pq->heapArray[0].data= NULL;
 }
 
 Heap* createHeap(){
