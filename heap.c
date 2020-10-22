@@ -50,7 +50,6 @@ void heap_pop(Heap* pq){
     aux2= pq->heapArray[0].priority;
     pq->heapArray[0].data= pq->heapArray[pq->size-1].data;
     pq->heapArray[0].priority= pq->heapArray[pq->size-1].priority;
-    printf("priority es %d", pq->heapArray[0].priority);
     pq->heapArray[pq->size-1].data= aux;
     pq->heapArray[pq->size-1].priority =aux2;
     pq->heapArray[pq->size-1].data = NULL;
