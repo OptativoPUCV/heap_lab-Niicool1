@@ -52,7 +52,7 @@ void heap_pop(Heap* pq){
     pq->heapArray[pq->size-1].data= aux;
     pq->heapArray[pq->size-1].priority =aux2;
     pq->heapArray[pq->size-1].data = NULL;
-    pq->heapArray[pq->size-1].priority=0;
+    pq->heapArray[pq->size-1].priority=8;
     pq->size--;
 }
 
