@@ -47,7 +47,7 @@ void heap_pop(Heap* pq){
     heapElem *aux;
     int aux2;
     for (int i=0;i<pq->size;i++){
-      printf("%d",pq->heapArray[i].priority);
+      printf("%d\n",pq->heapArray[i].priority);
     }
     aux= pq->heapArray[0].data;
     aux2= pq->heapArray[0].priority;
