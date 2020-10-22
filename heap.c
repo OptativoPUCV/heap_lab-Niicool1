@@ -46,9 +46,6 @@ void heap_push(Heap* pq, void* data, int priority){
 void heap_pop(Heap* pq){
     heapElem *aux;
     int aux2;
-    for (int i=0;i<pq->size;i++){
-      printf("%d\n",pq->heapArray[i].priority);
-    }
     aux= pq->heapArray[0].data;
     aux2= pq->heapArray[0].priority;
     pq->heapArray[0].data= pq->heapArray[pq->size-1].data;
@@ -64,14 +61,12 @@ void heap_pop(Heap* pq){
         int auxiliar= pq->heapArray[0].priority;
         pq->heapArray[0].priority = pq->heapArray[1].priority;
         pq->heapArray[1].priority= auxiliar;
-      
-     // cambiar pos raiz por pos 1 (izquierda de raiz)
+  
     }
       else {
         int auxiliar2= pq->heapArray[0].priority;
         pq->heapArray[0].priority= pq->heapArray[2].priority;
         pq->heapArray[2].priority= auxiliar2;
-      //cambiar raiz por pos 2 (der de raiz)
     }
   }
   
