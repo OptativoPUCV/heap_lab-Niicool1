@@ -21,6 +21,7 @@ void* heap_top(Heap* pq){
   if (pq->heapArray==NULL){
     return NULL;
   }
+  pq->heapArray[0].data= NULL;
   return pq->heapArray[0].data;
 }
 
