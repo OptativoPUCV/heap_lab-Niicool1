@@ -20,16 +20,25 @@ typedef struct Heap{
 void* heap_top(Heap* pq){
   if (pq->heapArray==NULL){
     return NULL;
-    printf("es nulo");
   }
-  printf("no es nulo");
   return pq->heapArray[0].data;
 }
 
 
 
 void heap_push(Heap* pq, void* data, int priority){
-
+  if (pq->size+1 > pq->capac){
+    pq->capac = (pq->capac)*2 + 1;
+    pq->heapArray= realloc(pq->heapArray, (pq->capac)*sizeof(heapElem));
+  }
+  int x= pq->size;
+  while (x>0 && pq->heapArray[(x-1)/2].priority < priority){
+    pq->heapArray[x]=pq->heapArray[(x-1)/2];
+    x= (x-1)/2;
+  }
+  pq->heapArray[x].priority=priority;
+  pq->heapArray[x].data=data;
+  pq->size++;
 }
 
 
